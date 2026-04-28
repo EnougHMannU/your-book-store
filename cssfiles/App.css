@@ -1,103 +1,108 @@
+/* ========================= */
+/* 🔥 GLOBAL BACKGROUND (GIF) */
+/* ========================= */
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: url("../pictures/asitebg.gif") no-repeat center center fixed;
+  background-size: cover;
+
+  font-family: sans-serif;
+}
+
+/* 🔥 DARK OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+}
+
+/* ========================= */
+/* 🔥 MAIN APP */
+/* ========================= */
+
 .App {
   text-align: center;
-  
 }
-/* poori screen ki height */
+
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
- 
 }
 
-/* header hamesha upar */
+/* ========================= */
+/* 🔥 HEADER */
+/* ========================= */
+
 .header {
-  background-color: #222;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
   color: white;
 }
 
-/* content grow karega */
+/* ========================= */
+/* 🔥 CONTENT */
+/* ========================= */
+
 .content {
   flex: 1;
   padding: 20px;
 }
 
-/* footer hamesha niche */
+/* ========================= */
+/* ❌ REMOVE FOOTER BG (IMPORTANT) */
+/* ========================= */
+
 .footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
+  background: transparent !important;
+  backdrop-filter: none !important;
 }
+
+/* ========================= */
+/* 🔥 LOGO */
+/* ========================= */
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* ========================= */
+/* 🔥 HEADER SECTION */
+/* ========================= */
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
   color: white;
 }
 
+/* ========================= */
+/* 🔥 LINKS */
+/* ========================= */
+
 .App-link {
-  color: #61dafb;
+  color: #ffd700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* ========================= */
+/* 🔥 CARD CONTAINER */
+/* ========================= */
 
-
-
-
-/* img{
-  height:300px;
-  width: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  
-} */
-/* 
-.container{
- height:500px;
- width: 300px;
- border: 6px solid rgb(0, 0, 0);
- border-radius: 20px;
- box-shadow: 6px 6px 10px 6px rgba(159, 0, 0, 0.15);
-} */
-.containers{
+.containers {
   height: 500px;
   width: 300px;
   padding: 20px;
-  background: #000000;
+
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+
   border-radius: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.15),
-    0 15px 40px rgba(159, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  color:beige;
-}
+  border: 1px solid rgba(255,255,255,0.1);
 
-
-
-.textblack{
-  color:black;
+  color: beige;
 }

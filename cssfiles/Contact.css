@@ -1,73 +1,116 @@
-/* 🔥 PAGE HEADING */
-h1 {
-  margin-top: 40px;
-  text-align: center;
+/* ======================= */
+/* 🔥 PAGE */
+/* ======================= */
+
+.contact-page {
+  background: transparent;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* ======================= */
+/* 🔥 HEADER */
+/* ======================= */
+
+.contact-header h1 {
+  margin-top: 50px;
   color: #ffffff;
-  letter-spacing: 1px;
+  font-weight: 700;
 }
 
-p {
-  margin-bottom: 40px;
-  text-align: center;
-  color: #cbd5f5;
+.contact-header p {
+  color: #dddddd;
+  max-width: 600px;
+  margin: 10px auto 40px;
 }
 
+/* ======================= */
 /* 🔥 IMAGE */
+/* ======================= */
+
 .imgclass {
-  height: 500px;
+  height: 420px;
   width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));
+
+  border-radius: 20px;
+  opacity: 0.9;
 }
 
-/* 🔥 CARD (Glass Effect) */
+/* ======================= */
+/* 🔥 REMOVE BOOTSTRAP WHITE */
+/* ======================= */
+
 .card {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ======================= */
+/* 🔥 GLASS CARD */
+/* ======================= */
+
+.contact-card {
   width: 100% !important;
-  max-width: 550px;
-  padding: 25px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  max-width: 500px;
+  padding: 30px;
 
-  /* Glassmorphism */
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  border-radius: 20px;
 
-  box-shadow: 
-    0 10px 30px rgba(0,0,0,0.6),
-    0 0 15px rgba(255, 215, 0, 0.1);
+  background: rgba(255,255,255,0.06); /* 🔥 more transparent */
+  backdrop-filter: blur(18px);
 
-  height: auto;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+
   transition: 0.3s;
 }
 
-/* Hover glow */
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 15px 40px rgba(0,0,0,0.7),
-    0 0 20px rgba(255, 215, 0, 0.25);
+/* HOVER */
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
 }
 
+/* ======================= */
+/* 🔥 TITLE */
+/* ======================= */
+
+.form-title {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ======================= */
 /* 🔥 INPUT GROUP */
+/* ======================= */
+
 .inputclass {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
-/* 🔥 INPUTS */
+/* ======================= */
+/* 🔥 LIGHT GLASS INPUTS */
+/* ======================= */
+
 .inputclass input,
 .inputclass textarea {
   width: 100%;
-  padding: 12px 14px;
+  padding: 12px;
   font-size: 14px;
-  border-radius: 10px;
 
-  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.25);
+
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+
+  color: #111;
   outline: none;
-
-  background: rgba(255,255,255,0.05);
-  color: #fff;
 
   transition: 0.3s;
 }
@@ -75,48 +118,79 @@ p {
 /* Placeholder */
 .inputclass input::placeholder,
 .inputclass textarea::placeholder {
-  color: #aaa;
+  color: #555;
 }
 
-/* ✨ FOCUS EFFECT */
+/* Focus */
 .inputclass input:focus,
 .inputclass textarea:focus {
-  border-color: #ffd700;
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  border-color: #c59d5f;
+  box-shadow: 0 0 10px rgba(197,157,95,0.5);
   transform: scale(1.02);
 }
 
-/* 🔥 BUTTON AREA */
+/* ======================= */
+/* 🔥 REMOVE INNER WHITE */
+/* ======================= */
+
 .card-body {
   padding: 0;
   margin-top: 20px;
   text-align: center;
+
+  background: transparent !important; /* 🔥 force remove */
 }
 
-/* 💎 PREMIUM BUTTON */
+/* ======================= */
+/* 🔥 BUTTON */
+/* ======================= */
+
 .card-body button {
   width: 100%;
-  padding: 11px;
-  border-radius: 10px;
-  font-weight: 600;
-  border: none;
+  padding: 12px;
 
-  background: linear-gradient(135deg, #ffd700, #b89600);
-  color: #000;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.3);
+
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+
+  color: #111;
+  font-weight: 600;
 
   transition: 0.3s;
 }
 
-/* Hover */
+/* HOVER */
 .card-body button:hover {
-  background: linear-gradient(135deg, #b89600, #ffd700);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg,#c59d5f,#e6c27a);
+  color: #000;
+
+  transform: scale(1.06);
+  box-shadow: 0 12px 25px rgba(197,157,95,0.5);
 }
 
+/* ======================= */
+/* 🔥 FOOTER */
+/* ======================= */
+
+.contact-footer {
+  margin-top: 40px;
+  color: #eeeeee;
+  text-align: center;
+}
+
+/* ======================= */
 /* 🔥 RESPONSIVE */
+/* ======================= */
+
 @media (max-width: 768px) {
+
   .imgclass {
-    height: 300px;
+    height: 260px;
+  }
+
+  .contact-card {
+    padding: 20px;
   }
 }

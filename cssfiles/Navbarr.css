@@ -1,114 +1,152 @@
-/* 🔥 LOGO */
-.imglogo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-}
+/* ========================= */
+/* 🔥 NAVBAR (PURE CLEAN TRANSPARENT) */
+/* ========================= */
 
-/* 🔥 NAVBAR (Luxury Dark Gradient) */
 .custom-navbar {
-  background: linear-gradient(135deg, #000000, #0f172a);
-  padding: 10px 0;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  background: transparent !important;
+  padding: 12px 0;
 }
 
-/* 🔥 BRAND TEXT */
-.brand-text {
-  color: #ffffff !important;
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+/* ========================= */
+/* 🔥 LOGO */
+/* ========================= */
 
-/* 🔥 NAV LINKS */
-.custom-navbar .nav-link {
-  color: #e5e5e5 !important;
-  margin-left: 12px;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
+.imglogo {
+  height: 50px;
   transition: 0.3s;
 }
 
-/* Hover effect for links */
-.custom-navbar .nav-link:hover {
-  color: #ffd700 !important;
+.imglogo:hover {
+  transform: scale(1.05);
 }
 
-/* 🔥 TOGGLE BUTTON */
-.navbar-toggler {
-  border-color: #ffffff;
+/* ========================= */
+/* 🔥 NAV LINKS */
+/* ========================= */
+
+.nav-text {
+  position: relative;
+  color: #ffffff !important;
+  margin-left: 22px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.navbar-toggler-icon {
-  filter: invert(1);
+/* UNDERLINE */
+.nav-text::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #c59d5f;
+  transition: 0.3s;
 }
 
-/* ========================================= */
-/* 💎 PREMIUM LUXURY BUTTON */
-/* ========================================= */
+.nav-text:hover {
+  color: #c59d5f !important;
+}
+
+.nav-text:hover::after {
+  width: 100%;
+}
+
+/* ========================= */
+/* 🔥 CART ICON FIX */
+/* ========================= */
+
+.cart-icon {
+  color: #ffffff !important;
+  margin-left: 22px;
+  position: relative;
+}
+
+/* ❌ REMOVE SHIFT */
+.cart-icon:hover {
+  color: #c59d5f !important;
+  /* NO transform → fix jump issue */
+}
+
+/* BADGE */
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 50%;
+}
+
+/* ========================= */
+/* 🔥 BUTTON */
+/* ========================= */
 
 .mybutton {
+  background: linear-gradient(135deg,#c59d5f,#e6c27a);
+  border: none;
   padding: 7px 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 215, 0, 0.25);
-
-  /* Glass effect */
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
-
-  color: #f5f5f5;
-  font-size: 15px;
+  border-radius: 20px;
+  margin-left: 15px;
+  color: #000;
   font-weight: 600;
-  letter-spacing: 0.5px;
-
-  cursor: pointer;
-  transition: all 0.35s ease;
-
-  /* Shadow */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: 0.3s;
 }
 
-/* ✨ HOVER = GOLD LUXURY EFFECT */
 .mybutton:hover {
-  color: #ffd700;
-
-  background: linear-gradient(
-    135deg,
-    rgba(255, 215, 0, 0.2),
-    rgba(255, 215, 0, 0.05)
-  );
-
-  border: 1px solid #ffd700;
-
-  transform: translateY(-3px) scale(1.04);
-
-  box-shadow:
-    0 8px 25px rgba(255, 215, 0, 0.3),
-    0 0 12px rgba(255, 215, 0, 0.5);
+  transform: scale(1.05);
 }
 
-/* 💥 CLICK EFFECT */
-.mybutton:active {
-  transform: translateY(0) scale(0.97);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* ========================= */
+/* 🔥 TOGGLE (3 DOT) */
+/* ========================= */
+
+.custom-toggle {
+  border: none !important;
+  color: #fff !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-/* ========================================= */
-/* 🌟 EXTRA TOUCHES */
-/* ========================================= */
-
-/* Smooth underline animation on hover */
-.custom-navbar .nav-link::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 0%;
-  background: #ffd700;
-  transition: width 0.3s;
-  margin-top: 3px;
+/* REMOVE DEFAULT ICON */
+.navbar-toggler-icon {
+  display: none;
 }
 
-.custom-navbar .nav-link:hover::after {
-  width: 100%;
+/* ========================= */
+/* 🔥 MOBILE MENU (SIMPLE CLEAN) */
+/* ========================= */
+
+@media (max-width: 992px) {
+
+  .navbar-collapse {
+    background: transparent !important; /* 🔥 no glass */
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-text {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .cart-icon {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .mybutton {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* ========================= */
+/* 🔥 SMOOTH */
+/* ========================= */
+
+* {
+  scroll-behavior: smooth;
 }

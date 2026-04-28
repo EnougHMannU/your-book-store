@@ -1,18 +1,183 @@
-.card-img-top {
-  height: 140px;
-  object-fit: contain;
-  padding: 15px;
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #000;
-  border-radius: 50%;
-  padding: 18px;
-  background-size: 55% 55%;
-  transition: all 0.3s ease;
+/* ======================= */
+/* 🔥 CARD BASE */
+/* ======================= */
+
+.book-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  transition: 0.4s;
+  position: relative;
+
+  height: 100%;
+  padding-bottom: 15px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-  background-color: #fffb03;
+.book-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* ======================= */
+/* 🔥 IMAGE SECTION */
+/* ======================= */
+
+.img-box {
+  height: 260px;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-box img {
+  height: 220px;
+  width: auto;
+
+  border-radius: 12px;
+  object-fit: contain;
+
+  transition: 0.4s;
+}
+
+.book-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ======================= */
+/* 🔥 CARD BODY */
+/* ======================= */
+
+.book-card .card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+/* TITLE */
+.book-card h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* PRICE */
+.price {
+  color: #c59d5f;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+/* PAGES */
+.pages {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+/* ======================= */
+/* 🔥 CART BUTTON (FIXED) */
+/* ======================= */
+
+.cart-btn {
+  width: 100%;
+  padding: 10px;
+
+  border-radius: 25px;
+  border: none;
+
+  background: linear-gradient(135deg,#c59d5f,#e6c27a);
+  color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.cart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(197,157,95,0.5);
+}
+
+/* ======================= */
+/* 🔥 MODAL */
+/* ======================= */
+
+.modal-content {
+  border-radius: 20px;
+  border: none;
+
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* BODY */
+.rgb-modal {
+  text-align: center;
+  padding: 30px;
+}
+
+/* IMAGE */
+.rgb-modal img {
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* TITLE */
+.rgb-modal h3 {
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.rgb-modal p {
+  color: #666;
+}
+
+/* SELECT */
+.rgb-modal select {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* BUTTON */
+.rgb-btn {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 20px;
+  border: none;
+
+  background: linear-gradient(135deg,#c59d5f,#e6c27a);
+  color: #000;
+
+  font-weight: 600;
+}
+
+/* ======================= */
+/* 🔥 RESPONSIVE */
+/* ======================= */
+
+@media (max-width: 768px) {
+
+  .img-box {
+    height: 200px;
+  }
+
+  .img-box img {
+    height: 160px;
+  }
 }

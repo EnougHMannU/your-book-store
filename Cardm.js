@@ -3,117 +3,116 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Carousel from 'react-bootstrap/Carousel';
+import Modal from 'react-bootstrap/Modal';
+import { useState } from 'react';
+import { FiShoppingCart } from "react-icons/fi";
 import './cssfiles/Cardm.css';
 
-
 export default function Cardm() {
+
+  const [show, setShow] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
+  const [qty, setQty] = useState(1);
+
+  const books = [
+    {title:"THE SHINNING",price:3999,pages:420,img:"https://m.media-amazon.com/images/I/71LWM5fjbRL._UF1000,1000_QL80_.jpg"},
+    {title:"THE HUNGER GAMES",price:4299,pages:390,img:"https://cdn.waterstones.com/bookjackets/large/9781/4071/9781407132082.jpg"},
+    {title:"THE GREAT INDIAN NOVEL",price:4599,pages:450,img:"https://rukminim2.flixcart.com/image/480/640/kjd6nww0-0/book/o/5/w/the-great-indian-novel-original-imafyxyfkbfut4t6.jpeg?q=20"},
+    {title:"RAMAYANA",price:4999,pages:600,img:"https://m.media-amazon.com/images/I/91AlWwBjrTL.jpg"},
+    {title:"MAHABHARATA",price:5499,pages:800,img:"https://m.media-amazon.com/images/I/81gxiU-w93L.jpg"},
+    {title:"A LITTLE LIFE",price:3999,pages:350,img:"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSSS5ZM9Uc2GXXN59BsKK4Cyawh1VRYKFtLluMzcYdiHktYpX9t"},
+    {title:"GAMES OF THRONE",price:4799,pages:700,img:"https://m.media-amazon.com/images/I/71Jzezm8CBL._AC_UF1000,1000_QL80_.jpg"},
+    {title:"POWER OF SUBCONSCIOUS MIND",price:3999,pages:300,img:"https://m.media-amazon.com/images/I/81gTwYAhU7L._AC_UF1000,1000_QL80_.jpg"},
+    {title:"TO KILL A MOCKINGBIRD",price:4199,pages:350,img:"https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1612238791i/56916837.jpg"},
+    {title:"PRIDE AND PREJUDICE",price:3999,pages:280,img:"https://m.media-amazon.com/images/I/81Scutrtj4L._UF1000,1000_QL80_.jpg"},
+    {title:"THE KITE RUNNER",price:4399,pages:340,img:"https://m.media-amazon.com/images/I/81YXfTztoZL._AC_UF1000,1000_QL80_.jpg"},
+    {title:"THE BOOK THIEF",price:4599,pages:520,img:"https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781909531611.jpg"},
+    {title:"THE SILENT PATIENT",price:3999,pages:320,img:"https://m.media-amazon.com/images/I/81y9uCHoxrL._UF1000,1000_QL80_.jpg"},
+    {title:"48 LAWS",price:4799,pages:480,img:"https://m.media-amazon.com/images/I/61J3Uu4jOLL.jpg"},
+    {title:"A BRIEF HISTORY OF TIME",price:4999,pages:260,img:"https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1333578746i/3869.jpg"},
+    {title:"RICH DAD POOR DAD",price:3999,pages:300,img:"https://cdn.penguin.co.in/wp-content/uploads/2023/12/9781612681139-1-scaled.jpg"}
+  ];
+
+  const openModal = (book) => {
+    setSelectedBook(book);
+    setShow(true);
+    setQty(1);
+  };
+
+  const addToCart = () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingIndex = cart.findIndex(item => item.title === selectedBook.title);
+
+    if (existingIndex !== -1) {
+      cart[existingIndex].qty += qty;
+    } else {
+      cart.push({...selectedBook, qty});
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("cartUpdated"));
+    setShow(false);
+  };
+
   return (
     <Container className="my-5">
-      <Carousel >
+      <Row className="g-4">
 
-        {/* SLIDE 1 */}
-        <Carousel.Item>
-          <Row className="justify-content-center">
-            <Col md={3}>
-              <Card className="text-center">
-                <Card.Img variant="top" src="https://images.seeklogo.com/logo-png/25/1/javascript-logo-png_seeklogo-255387.png" />
-                <Card.Body>
-                  <Card.Title>JAVASCRIPT</Card.Title>
-                  <Card.Text>Learn JavaScript from scratch.</Card.Text>
-                  <Button variant="primary">LEARN NOW</Button>
-                </Card.Body>
-              </Card>
-            </Col>
+        {books.map((book, i) => (
+          <Col md={3} key={i}>
+            <Card className="book-card">
 
-            <Col md={3}>
-              <Card className="text-center">
-                <Card.Img variant="top" src="https://images.icon-icons.com/2415/PNG/512/react_original_wordmark_logo_icon_146375.png" />
-                <Card.Body>
-                  <Card.Title>REACT JS</Card.Title>
-                  <Card.Text>Build modern UI with React.</Card.Text>
-                  <Button variant="primary">LEARN NOW</Button>
-                </Card.Body>
-              </Card>
-            </Col>
+              <div className="img-box">
+                <Card.Img src={book.img} />
+              </div>
 
-            <Col md={3}>
-              <Card className="text-center">
-                <Card.Img variant="top" src="https://images.credly.com/images/51aeb74b-ec87-4069-93fc-0ea449c8d77f/twitter_thumb_201604_node.png" />
-                <Card.Body>
-                  <Card.Title>NODE JS</Card.Title>
-                  <Card.Text>Backend with Node.js.</Card.Text>
-                  <Button variant="primary">LEARN NOW</Button>
-                </Card.Body>
-              </Card>
-            </Col>
+              <Card.Body>
 
-            <Col md={3}>
-              <Card className="text-center">
-                <Card.Img variant="top" src="https://cdn.iconscout.com/icon/free/png-256/free-c-icon-svg-download-png-1175247.png" />
-                <Card.Body>
-                  <Card.Title>C LANGUAGE</Card.Title>
-                  <Card.Text>Programming fundamentals.</Card.Text>
-                  <Button variant="primary">LEARN NOW</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Carousel.Item>
+                <h5>{book.title}</h5>
 
-        {/* SLIDE 2 */}
-<Carousel.Item>
-  <Row className="justify-content-center">
-    
-    <Col md={3}>
-      <Card className="text-center">
-        <Card.Img variant="top" src="https://i.pinimg.com/736x/51/45/df/5145df1033fa60f13b3b7125d2b69554.jpg" />
-        <Card.Body>
-          <Card.Title>C++</Card.Title>
-          <Card.Text>Object oriented programming.</Card.Text>
-          <Button variant="primary">LEARN NOW</Button>
-        </Card.Body>
-      </Card>
-    </Col>
+                <p className="price">₹ {book.price}</p>
+                <p className="pages">{book.pages} pages</p>
 
-    <Col md={3}>
-      <Card className="text-center">
-        <Card.Img variant="top" src="https://cdn.worldvectorlogo.com/logos/java.svg" />
-        <Card.Body>
-          <Card.Title>JAVA</Card.Title>
-          <Card.Text>Enterprise level applications.</Card.Text>
-          <Button variant="primary">LEARN NOW</Button>
-        </Card.Body>
-      </Card>
-    </Col>
+                <Button className="cart-btn" onClick={() => openModal(book)}>
+                  <FiShoppingCart size={18} />
+                </Button>
 
-    <Col md={3}>
-      <Card className="text-center">
-        <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png" />
-        <Card.Body>
-          <Card.Title>PYTHON</Card.Title>
-          <Card.Text>Data science & automation.</Card.Text>
-          <Button variant="primary">LEARN NOW</Button>
-        </Card.Body>
-      </Card>
-    </Col>
+              </Card.Body>
 
-    <Col md={3}>
-      <Card className="text-center">
-        <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6935wo8bLZh5FeafJEffqWKDOpNpx6UE5bg&s" />
-        <Card.Body>
-          <Card.Title>HTML</Card.Title>
-          <Card.Text>Web structure fundamentals.</Card.Text>
-          <Button variant="primary">LEARN NOW</Button>
-        </Card.Body>
-      </Card>
-    </Col>
+            </Card>
+          </Col>
+        ))}
 
-  </Row>
-</Carousel.Item>
+      </Row>
 
+      {/* MODAL */}
+      <Modal show={show} onHide={() => setShow(false)} centered>
+        <Modal.Body className="rgb-modal">
 
-      </Carousel>
+          {selectedBook && (
+            <>
+              <img src={selectedBook.img} alt={selectedBook.title} />
+              <h3>{selectedBook.title}</h3>
+
+              <p>₹ {selectedBook.price}</p>
+              <p>{selectedBook.pages} pages</p>
+
+              <select value={qty} onChange={(e)=>setQty(Number(e.target.value))}>
+                {[1,2,3,4,5].map(n=>(
+                  <option key={n}>{n}</option>
+                ))}
+              </select>
+
+              <Button className="rgb-btn" onClick={addToCart}>
+                Confirm Add
+              </Button>
+            </>
+          )}
+
+        </Modal.Body>
+      </Modal>
+
     </Container>
   );
 }

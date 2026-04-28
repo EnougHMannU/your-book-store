@@ -1,0 +1,399 @@
+/* ================= PAGE ================= */
+
+.cart-page {
+  padding: 40px 20px;
+  background: transparent;
+  min-height: 100vh;
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #cccccc;
+}
+
+/* ================= CART ================= */
+
+.cart-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+
+  padding: 15px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.cart-item img {
+  height: 80px;
+  object-fit: contain;
+}
+
+/* ================= SUMMARY ================= */
+
+.cart-summary {
+  max-width: 900px;
+  margin: 20px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+
+  padding: 20px;
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ================= BUTTON ================= */
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* PRIMARY */
+.btn.primary {
+  background: linear-gradient(135deg,#c59d5f,#e6c27a);
+  color: #000;
+}
+
+.btn.primary:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 20px rgba(197,157,95,0.5);
+}
+
+/* DANGER */
+.btn.danger {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background: red;
+}
+
+/* ================= FORM ================= */
+
+.form-box {
+  max-width: 420px;
+  margin: auto;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+
+  padding: 25px;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.form-box h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+.lux-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+
+  transition: 0.3s;
+}
+
+.lux-input::placeholder {
+  color: #cccccc;
+}
+
+.lux-input:focus {
+  border-color: #c59d5f;
+  box-shadow: 0 0 10px rgba(197,157,95,0.5);
+  transform: scale(1.02);
+}
+
+/* ================= PHONE BOX (UPDATED PREMIUM) ================= */
+
+.phone-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.country-code {
+  padding: 12px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+  min-width: 100px;
+
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.country-code option {
+  color: #000;
+}
+
+.country-code:focus {
+  border-color: #c59d5f;
+  box-shadow: 0 0 10px rgba(197,157,95,0.5);
+}
+
+.phone-input {
+  flex: 1;
+}
+
+/* ================= PAYMENT ================= */
+
+.payment-container {
+  display: flex;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* LEFT */
+.payment-left {
+  flex: 2;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+
+  padding: 20px;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+  color: #fff;
+}
+
+/* RIGHT */
+.payment-right {
+  flex: 1;
+
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(15px);
+
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ================= PAYMENT OPTIONS ================= */
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.pay-option {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.35s ease;
+}
+
+.pay-option::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+
+  background: linear-gradient(120deg,#c59d5f,#e6c27a,#c59d5f);
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.pay-option:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(135deg,#c59d5f,#e6c27a);
+  color: #000;
+  box-shadow: 0 15px 30px rgba(197,157,95,0.6);
+}
+
+.pay-option:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+
+  animation: shine 0.8s;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ================= CARD FORM ================= */
+
+.premium-card {
+  margin-top: 15px;
+  padding: 15px;
+
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* ================= SUCCESS ================= */
+
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.success-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+  color: #fff;
+}
+
+.checkmark {
+  font-size: 45px;
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .payment-container {
+    flex-direction: column;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.qty-box button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: #c59d5f;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.qty-box span {
+  min-width: 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+}
