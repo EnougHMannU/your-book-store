@@ -10,9 +10,6 @@ import Aboutus from './Aboutus';
 import Contact from './Contact';
 import Books from './Books';
 
-import Sdatatable from './StudentComponent/Sdatatable.js';
-import Cdatatable from './CourseComponent/Cdatatable.js';
-import Tdatatable from './TeacherComponent/Tdatatable.js';
 import Loginmodal from './Loginmodal.js';
 
 export default function App() {
@@ -86,9 +83,7 @@ export default function App() {
         <Route path="/cart" element={<Addcart />} />
         <Route path="/books" element={<Books />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/sdatatable" element={<Sdatatable/>}/>
-        <Route path="/cdatatable" element={<Cdatatable/>}/>
-        <Route path="/tdatatable" element={<Tdatatable/>}/>
+        
       </Routes>
 
       <Footer />
